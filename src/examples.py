@@ -6,7 +6,6 @@ Three worked example schemas covering different normalization scenarios:
   Example 2 — EMPLOYEE:   single key, has transitive dependencies (3NF violation)
   Example 3 — ENROLLMENT: composite key, has both partial and transitive dependencies
 
-Run this file directly to see all three traced end-to-end.
 """
 
 import sys
