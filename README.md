@@ -1,6 +1,6 @@
 # Schema Normalizer: 1NF → 3NF Step Tracer
 
-A Python tool that takes an unnormalized relational schema, detects functional dependency violations, and traces the decomposition from **1NF through 2NF to 3NF** — printing the reasoning at each step the way a textbook or instructor would.
+A Python tool that takes an unnormalized relational schema, detects functional dependency violations, and traces the decomposition from 1NF through 2NF to 3NF — printing the reasoning at each step the way a textbook or instructor would.
 
 ## What it does
 
@@ -46,27 +46,6 @@ Running the EMPLOYEE example (transitive dependency: `EmployeeID → DeptID → 
 | `EMPLOYEE` | Staff + department info | Transitive dependency (3NF) |
 | `ENROLLMENT` | University course enrollment | Both partial and transitive |
 
-## Project structure
-
-```
-schema-normalizer/
-├── src/
-│   ├── normalizer.py   # core FD detection and decomposition engine
-│   ├── tracer.py       # step-by-step trace printer
-│   └── examples.py     # three worked example schemas
-├── tests/
-│   └── test_normalizer.py  # 13 unit tests
-└── README.md
-```
-
-## Setup & usage
-
-```bash
-# no dependencies beyond Python 3 standard library
-python3 src/examples.py          # run all three worked examples
-python3 -m pytest tests/ -v      # run the test suite
-```
-
 To define your own schema:
 
 ```python
@@ -90,5 +69,3 @@ trace_normalization(rel)
 
 Database normalization is one of the most error-prone topics in introductory database courses — students understand the definitions but consistently struggle to apply them to real schemas. This tool makes each step explicit and inspectable, showing not just *what* the final decomposition is but *why* each attribute moved.
 
-## License
-MIT
